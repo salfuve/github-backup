@@ -7,7 +7,7 @@ Due limitations of the GitHub API, the wiki can't be restored automatically and 
 In order to use this script in Windows, you need to have installed Git
 
 ## Use
-Download the script backhub-git.sh and open a bash console:
+Download the scripts (backhub-git.sh and restore-git.sh) and open a bash console:
 
 ## Backup
 $ ./backhub-git.sh username password organization repository destination 
