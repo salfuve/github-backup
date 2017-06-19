@@ -9,14 +9,17 @@ In order to use this script in Windows, you need to have installed Git
 ## Use
 Download the script backhub-git.sh and open a bash console:
 
+## Backup
 $ ./backhub-git.sh username password organization repository destination 
 
 (if the field destination is empty, the backup is the created by default in the same folder where the script is)
 When the script is finished, a .tar has been created with:
-    -repository.git
-    -repository.wiki
-    -Issues.json
-If you need to restore the repository some day:
+    - repository.git
+    - repository.wiki
+    - Issues.json
+    -  
+ ## Restore
+If you need to restore the repository into Githbu someday:
 
 $ ./restore-git.sh username password organization repository date
 
