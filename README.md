@@ -1,13 +1,23 @@
-# github-backup
-This script creates a backup of all your repositories including your code, your issues and wiki locally and your code and issues into a new github repository.
+# Backup and Restore
+backup-git.sh creates a (local)backup of your repository including your code, your issues and wiki.
+restore-git.sh restore a repository into github including code and Issues.
+Due limitations of the GitHub API, the wiki can't be restored automatically and you have to restore it manually.
 
 ## Prerequisites
-In order to use this script in Windows, you need to install Git first
+In order to use this script in Windows, you need to have installed Git
 
 ## Use
-Download the script backhub-github.sh and open a bash console, go to the folder where you have downloaded the file and write :
+Download the script backhub-git.sh and open a bash console:
 
-$ ./backhub-github.sh
+$ ./backhub-git.sh username password organization repository destination 
 
-The script asks your git username and your git password.
-When the execution is finished, a new github repository for each repository restored has been created with the name "your_repository"-restoredGHBU".
+(if the field destination is empty, the backup is the created by default in the same folder where the script is)
+When the script is finished, a .tar has been created with:
+    -repository.git
+    -repository.wiki
+    -Issues.json
+If you need to restore the repository some day:
+
+$ ./restore-git.sh username password organization repository date
+
+'date' parameter is YearMonhtDay of the last backup (p.e 20170620)
