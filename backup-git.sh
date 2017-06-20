@@ -46,7 +46,7 @@ function backupLocally {
  #Get the issue's number in order to post them later into GIT 
     check curl --silent -u $GHBU_UNAME:$GHBU_PASSWD ${GHBU_API}/repos/${GHBU_ORG}/${GHBU_1REPO}/issues\?state\=all -q | check grep "\"number\"" | check awk -F': ' '{print $2}' | check sed -e 's/,//g'>issuelist.txt
  #zipp the files
-    tar -cvf ${GHBU_ORG}-${GHBU_1REPO}-${TSTAMP}.tar ${GHBU_ORG}-${GHBU_1REPO}-${TSTAMP}.git ${GHBU_ORG}-${GHBU_1REPO}.wiki-${TSTAMP} ${GHBU_ORG}-${GHBU_1REPO}-ISSUES-${TSTAMP}.json 
+    tar -cvf ${GHBU_ORG}-${GHBU_1REPO}-${TSTAMP}.tar ${GHBU_ORG}-${GHBU_1REPO}-${TSTAMP}.git ${GHBU_ORG}-${GHBU_1REPO}.wiki-${TSTAMP} ${GHBU_ORG}-${GHBU_1REPO}-ISSUES-${TSTAMP}.json issuelist.txt  
 
     cd ..
 }
